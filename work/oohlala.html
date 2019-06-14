@@ -1,0 +1,36 @@
+<!DOCTYPE html><html class="no-js"><!--[if lt IE 9]
+| <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script--><head><meta charset="UTF-8"><title>KYTE. App &amp; Website design in Sheffield.</title><link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"><link href="../favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"><link href="../favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"><link href="../favicon/site.webmanifest" rel="manifest"><meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"><link href="../css/style.css" rel="stylesheet" type="text/css"></head></html><body class="light-body page__projects"><nav data-aos="fade-down"><div class="nav-inner"><a class="subtext site-logo" href="/" id="homeLink">Kyte<span class="active-indicator">.</span></a><ul class="nav-links"><li class="nav-links__item" id="projectsLink"><a class="nav-links__link" href="/projects.html">Projects<span class="active-indicator">.</span></a></li><li class="nav-links__item" id="contactLink"><a class="nav-links__link" href="/contact.html">Contact<span class="active-indicator">.</span></a></li></ul></div></nav><div class="wrapper"><div class="background-angle"></div><div class="content"><div class="hero"><div class="section__1-2"><div data-aos="fade-right"><div class="subtext text--highlight">Case Study</div><h2 class="text--large text--bg">Ooh<br>Lala</h2></div><p data-aos="fade-left">Ooh Lala had a very clear idea of how they wanted their logo and website to look; "elegant, pretty and lots of love hearts!" - we worked together to create a design which ticked all those boxes and reassured potential customers that Ooh Lala were the company they should trust with their big day.</p></div></div><div class="imgs--even"><div class="imgs__logo--oohlala"><div class="imgs__logo-float"><img alt="The Ooh lala Logo" src="../images/oohlala/logo.png"></div></div></div><div class="section"><div class="text-only text--invert"><p>We knew that customers were basing their decision to employ Ooh Lala on the strength of their previous styles, so we used every opporunity to show off Ooh Lala's beautiful work.</p><p>We brought it all together on the gallery page, and peppered it with glowing testimonials from happy brides!</p></div></div><div class="imgs__full-width"><img alt="The Ooh lala homepage" src="../images/oohlala/home.jpg"></div><div class="section section--hero"><h1 class="text--x-large text--light">sunshine<br>& sparkles</h1></div><div class="imgs__full-width"><img alt="The Ooh lala gallery" src="../images/oohlala/gallery.jpg"></div><div class="section"><blockquote>You are stars! Thank you so much, you have been brilliant and I am so happy with the site!</blockquote><cite>Katie Bolt, Ooh Lala</cite></div><div class="imgs--even"><div class="imgs__full-width"><img alt="The Ooh lala blog index" src="../images/oohlala/blog.jpg"></div><div class="imgs__full-width"><img alt="An Ooh lala blog post" src="../images/oohlala/blog-post.jpg"></div></div><div class="section"><div class="text-only text--invert"><p>Every website we build is designed from the start to work across devices of any size and Ooh Lala was no exception. We optimise everything so that it not only looks great, but loads fast and doesn't eat all of your data!</p></div></div><div class="imgs--even"><div class="imgs__app-screen imgs__device--invisible" data-aos="fade-left"><img alt="The Ooh lala homepage on mobile" src="../images/oohlala/mobile-home.jpg"></div><div class="imgs__app-screen imgs__device"><img alt="The Ooh lala menu on mobile" src="../images/oohlala/mobile-menu.jpg"></div><div class="imgs__app-screen imgs__device--invisible" data-aos="fade-right"><img alt="The Ooh lala homepage on mobile" src="../images/oohlala/mobile-blog.jpg"></div></div></div></div><footer class="text--center"><div class="footer__content" data-aos="fade-up" data-aos-duration="800"><h2 class="text--large">Let's work together</h2><a class="button" href="/contact.html">Get in touch</a></div><div class="footer__meta"><div class="text--center">Created with 💛 in Great Britain</div></div></footer><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>// Init AOS animations
+AOS.init();
+
+// Header fixed animation
+$(function() {
+  var header = $(".nav-inner");
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 1) {
+      header.addClass("nav--stuck");
+    } else {
+      header.removeClass("nav--stuck");
+    }
+  });
+});
+
+// Netlify Contact form submission
+var contactForm = $("#contact-form");
+
+$(contactForm).submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).done(function () {
+    $(contactForm).addClass("success");
+    $("#contact-form fieldset, .form__submit").attr("disabled", true);
+  }).fail(function () {
+    $(contactForm).addClass("failed");
+    setTimeout(function(){
+      $(contactForm).removeClass("failed")
+    }, 4000)
+  });
+
+});</script></body>

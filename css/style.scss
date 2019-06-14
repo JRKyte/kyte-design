@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'Muli-black';
+  src:  url('../fonts/muli-black.woff2') format('woff2'),
+        url('../fonts/muli-black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Muli-regular';
+  src:  url('../fonts/muli-regular.woff2') format('woff2'),
+        url('../fonts/muli-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import 'sass/reset';
+@import 'sass/mixins/media-queries';
+@import 'sass/variables';
+@import 'sass/mixins/px-to-em';
+@import 'sass/scaffold';
+@import 'sass/helpers';
+@import 'sass/type';
+@import 'sass/buttons';
+@import 'sass/nav';
+@import 'sass/footer';
+@import 'sass/sections';
+@import 'sass/projects';
+@import 'sass/form';
+@import 'sass/aos';

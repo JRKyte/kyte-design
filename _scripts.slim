@@ -1,0 +1,40 @@
+script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
+script src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+
+javascript:
+
+  // Init AOS animations
+  AOS.init();
+
+  // Header fixed animation
+  $(function() {
+    var header = $(".nav-inner");
+    $(window).scroll(function() {
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 1) {
+        header.addClass("nav--stuck");
+      } else {
+        header.removeClass("nav--stuck");
+      }
+    });
+  });
+
+  // Netlify Contact form submission
+  var contactForm = $("#contact-form");
+
+  $(contactForm).submit(function(e) {
+    e.preventDefault();
+
+    var $form = $(this);
+    $.post($form.attr("action"), $form.serialize()).done(function () {
+      $(contactForm).addClass("success");
+      $("#contact-form fieldset, .form__submit").attr("disabled", true);
+    }).fail(function () {
+      $(contactForm).addClass("failed");
+      setTimeout(function(){
+        $(contactForm).removeClass("failed")
+      }, 4000)
+    });
+
+  });

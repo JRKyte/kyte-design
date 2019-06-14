@@ -1,0 +1,45 @@
+include _head
+body.light-body.page__projects
+  include _nav
+  .wrapper
+    .background-angle
+    .content
+      .hero data-aos="fade-up" data-aos-duration="1200"
+        .subtext.text--highlight Case Studies
+        h2.text--large
+          | Our
+          br
+          | Projects
+
+      .projects
+        a.projects__card style="background-image: url(../images/macro/project__card--macro.jpg)" href="/work/macro.html"
+          .projects__content
+            .projects__logo
+              img src="../images/macro/project__card--macro-logo.png"
+            .projects__detail
+              .projects__title.text--bold Helping the best get better
+              .projects__meta.text--medium UX Design | Branding
+        a.projects__card style="background-image: url(../images/project__card--moovee.jpg)" href="/work/moovee.html"
+          .projects__content
+            .projects__logo
+              img src="../images/project__card--moovee-logo.png"
+            .projects__detail
+              .projects__title.text--bold Just like the movies
+              .projects__meta.text--medium UX Design
+        a.projects__card style="background-image: url(../images/project__card--nuumi.jpg)" href="/work/nuumi.html"
+          .projects__content
+            .projects__logo
+              img src="../images/project__card--nuumi-logo.png"
+            .projects__detail
+              .projects__title.text--bold Reclaimed and sustainable
+              .projects__meta.text--medium UX Design
+        a.projects__card style="background-image: url(../images/project__card--oohlala.jpg)" href="/work/oohlala.html"
+          .projects__content
+            .projects__logo
+              img src="../images/project__card--oohlala-logo.png"
+            .projects__detail
+              .projects__title.text--bold Here comes the bride
+              .projects__meta.text--medium UX Design | Branding
+
+  include _footer
+  include _scripts

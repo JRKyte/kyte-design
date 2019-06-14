@@ -1,0 +1,36 @@
+<!DOCTYPE html><html class="no-js"><!--[if lt IE 9]
+| <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script--><head><meta charset="UTF-8"><title>KYTE. App &amp; Website design in Sheffield.</title><link href="../favicon/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"><link href="../favicon/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"><link href="../favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"><link href="../favicon/site.webmanifest" rel="manifest"><meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport"><link href="../css/style.css" rel="stylesheet" type="text/css"></head></html><body class="light-body page__projects"><nav data-aos="fade-down"><div class="nav-inner"><a class="subtext site-logo" href="/" id="homeLink">Kyte<span class="active-indicator">.</span></a><ul class="nav-links"><li class="nav-links__item" id="projectsLink"><a class="nav-links__link" href="/projects.html">Projects<span class="active-indicator">.</span></a></li><li class="nav-links__item" id="contactLink"><a class="nav-links__link" href="/contact.html">Contact<span class="active-indicator">.</span></a></li></ul></div></nav><div class="wrapper"><div class="background-angle"></div><div class="content"><div class="hero" data-aos="fade-up" data-aos-duration="1200"><div class="subtext text--highlight">Case Studies</div><h2 class="text--large">Our<br>Projects</h2></div><div class="projects"><a class="projects__card" href="/work/macro.html" style="background-image: url(../images/macro/project__card--macro.jpg)"><div class="projects__content"><div class="projects__logo"><img src="../images/macro/project__card--macro-logo.png"></div><div class="projects__detail"><div class="projects__title text--bold">Helping the best get better</div><div class="projects__meta text--medium">UX Design | Branding</div></div></div></a><a class="projects__card" href="/work/moovee.html" style="background-image: url(../images/project__card--moovee.jpg)"><div class="projects__content"><div class="projects__logo"><img src="../images/project__card--moovee-logo.png"></div><div class="projects__detail"><div class="projects__title text--bold">Just like the movies</div><div class="projects__meta text--medium">UX Design</div></div></div></a><a class="projects__card" href="/work/nuumi.html" style="background-image: url(../images/project__card--nuumi.jpg)"><div class="projects__content"><div class="projects__logo"><img src="../images/project__card--nuumi-logo.png"></div><div class="projects__detail"><div class="projects__title text--bold">Reclaimed and sustainable</div><div class="projects__meta text--medium">UX Design</div></div></div></a><a class="projects__card" href="/work/oohlala.html" style="background-image: url(../images/project__card--oohlala.jpg)"><div class="projects__content"><div class="projects__logo"><img src="../images/project__card--oohlala-logo.png"></div><div class="projects__detail"><div class="projects__title text--bold">Here comes the bride</div><div class="projects__meta text--medium">UX Design | Branding</div></div></div></a></div></div></div><footer class="text--center"><div class="footer__content" data-aos="fade-up" data-aos-duration="800"><h2 class="text--large">Let's work together</h2><a class="button" href="/contact.html">Get in touch</a></div><div class="footer__meta"><div class="text--center">Created with 💛 in Great Britain</div></div></footer><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>// Init AOS animations
+AOS.init();
+
+// Header fixed animation
+$(function() {
+  var header = $(".nav-inner");
+  $(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+
+    if (scroll >= 1) {
+      header.addClass("nav--stuck");
+    } else {
+      header.removeClass("nav--stuck");
+    }
+  });
+});
+
+// Netlify Contact form submission
+var contactForm = $("#contact-form");
+
+$(contactForm).submit(function(e) {
+  e.preventDefault();
+
+  var $form = $(this);
+  $.post($form.attr("action"), $form.serialize()).done(function () {
+    $(contactForm).addClass("success");
+    $("#contact-form fieldset, .form__submit").attr("disabled", true);
+  }).fail(function () {
+    $(contactForm).addClass("failed");
+    setTimeout(function(){
+      $(contactForm).removeClass("failed")
+    }, 4000)
+  });
+
+});</script></body>

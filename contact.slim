@@ -1,0 +1,49 @@
+include _head
+body.dark-body.page__contact
+  include _nav
+  .wrapper
+    .content
+      .section--footer
+        .hero
+          h1.text--large data-aos="fade-up" data-aos-duration="800"
+            | Let's work together
+          p.text--medium data-aos="zoom-out" data-aos-delay="800" We look forward to hearing from you!
+        form.form#contact-form method="POST" data-netlify="true" netlify-honeypot="no-skynet" name="contact-form" action="/contact.html"
+          fieldset
+
+            label.form__label for="name"
+              span Your name
+              span.required
+                | *
+                .sr-only Required
+            input#name.form__input name="name" type="text" placeholder="What can we call you?" required="required"
+
+            p.sr-only
+              label aria-hidden="true" What's your age?
+                input name="no-skynet"
+
+            label.form__label for="email"
+              span Your email
+              span.required
+                | *
+                .sr-only Required
+            input#email.form__input name="email" type="email" placeholder="How can we get back to you?" required="required"
+
+            label.form__label for="message"
+              span Your message
+              span.required
+                | *
+                .sr-only Required
+            textarea#message.form__textarea name="message" type="textarea" placeholder="What can we help you with?" required="required"
+
+            button.button.form__submit type="submit"
+              .form__submit--content
+                span Error 😔
+                span Let it fly 🚀
+                span Sent 👍🏼
+
+  footer.text--center
+    .footer__meta
+      .text--center Created with 💛 in Great Britain
+
+  include _scripts

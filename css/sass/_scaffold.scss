@@ -1,0 +1,73 @@
+//
+// Scaffold
+// --------------------------------------------------
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  font-weight: normal;
+  font-family: $font-family__body;
+  color: $text-primary;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  background-color: $primary-col--tint1;
+  &.navActive {
+    overflow: hidden;
+    height: 100%;
+  }
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  position: relative;
+  z-index: 1;
+}
+img {
+  width: 100%;
+}
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.content {
+  max-width: 1280px;
+  padding: 0 20px 20px;
+  margin: 0 auto;
+  @include media-query(md) {
+    padding: 0 30px 20px;
+  }
+  @include media-query(lg) {
+    padding: 0 40px 250px;
+  }
+}
+.light-body {
+  background-color: $background-light;
+}
+.dark-body {
+  background-color: $primary-col;
+}
+.background-angle {
+  position: absolute;
+  z-index: -2;
+  background-color: $primary-col;
+  width: 3000px;
+  height: 3000px;
+  transform: rotate(52deg);
+  top: -1500px;
+  right: 0;
+  @include media-query(lg) {
+    top: -1800px;
+  }
+}
+::-moz-selection {
+  background: #FFCA4A;
+  color: $white;
+}
+::selection {
+  background: #FFCA4A;
+  color: $white;
+}

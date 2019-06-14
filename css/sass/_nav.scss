@@ -1,0 +1,91 @@
+nav {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: $primary-col;
+}
+.nav-inner {
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.2s ease;
+  @include media-query(md) {
+    padding: 30px;
+  }
+  @include media-query(lg) {
+    padding: 30px 40px;
+  }
+  &.nav--stuck {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+.site-logo, .site-nav {
+  padding: 10px 0;
+  border: 0;
+  color: $white;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  transition-delay: 0.2s;
+  transition: background-color 0.5s ease;
+}
+.site-logo {
+  .hidden-sm {
+    display: none;
+    @include media-query(sm) {
+      display: inline-block;
+    }
+  }
+  &:focus {
+    background-color: $secondary-col;
+    outline: none;
+  }
+  &:active {
+    background-color: transparent;
+  }
+}
+.nav-links {
+  list-style: none;
+}
+.nav-links__item {
+  font-family: $font-family__heading;
+  font-weight: normal;
+  font-size: em(18);
+  display: inline-block;
+  + .nav-links__item {
+    margin-left: 10px;
+  }
+}
+.nav-links__link {
+  display: block;
+  padding: 10px 5px;
+  transition: background-color 0.5s ease;
+  transition-delay: 0.2s;
+  background-color: transparent;
+  @include media-query(sm) {
+    padding: 10px 20px;
+  }
+  &:focus {
+    background-color: $secondary-col;
+    outline: none;
+  }
+}
+.active-indicator {
+  display: none;
+  color: $secondary-col;
+  padding-left: 2px;
+}
+.page__home #homeLink .active-indicator {
+  display: inline-block;
+}
+.page__projects #projectsLink .active-indicator {
+  display: inline-block;
+}
+.page__contact #contactLink .active-indicator {
+  display: inline-block;
+}

@@ -1,0 +1,106 @@
+h1, h2, h3, h4, h5 {
+  line-height: 1.2;
+  font-weight: normal;
+  font-family: $font-family__heading;
+}
+p {
+ @extend .text--medium;
+ line-height: 1.5;
+ margin-bottom: 1em;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.text--x-small {
+  font-size: em(16);
+}
+.text--small {
+  font-size: em(18);
+}
+.text--medium {
+  font-size: em(20);
+  @include media-query(md) {
+    font-size: em(24);
+  }
+}
+.text--large {
+  font-size: em(50);
+  margin-bottom: em(5);
+  @include media-query(md) {
+    font-size: em(80);
+  }
+}
+.text--x-large {
+  font-size: em(60);
+  margin-bottom: em(5);
+  line-height: 1;
+  @include media-query(md) {
+    font-size: 9.7vw;
+  }
+}
+.text--highlight {
+  color: $secondary-col;
+}
+.text--dark {
+  color: #2850C8;
+}
+.text--light {
+  color: #E0E8FD;
+}
+.text--uppercase {
+  text-transform: uppercase;
+}
+.text--bold {
+  font-weight: normal;
+  font-family: $font-family__heading;
+}
+.text--right {
+  text-align: left;
+  @include media-query(md) {
+    text-align: right;
+  }
+}
+.text--center {
+  text-align: center;
+}
+.subtext {
+  @extend .text--small;
+  @extend .text--uppercase;
+  font-family: $font-family__heading;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+.text--primary {
+  color: $primary-col;
+}
+.text--invert {
+  color: #6D7DB5;
+}
+blockquote {
+  @extend .text--primary;
+  @extend .text--large;
+  font-family: $font-family__heading;
+  position: relative;
+  &::before {
+    content: '“';
+    font-size: em(60);
+    position: absolute;
+    color: #E0E8FD;
+    z-index: -1;
+    top: -80px;
+    left: -20px;
+    @include media-query(md) {
+      font-size: em(80);
+      top: -140px;
+      left: -50px;
+    }
+  }
+}
+cite {
+  @extend .subtext;
+  @extend .text--highlight;
+  font-style: normal;
+  text-align: right;
+  width: 100%;
+}
